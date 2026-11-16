@@ -18,9 +18,6 @@
 
 ---
 
-
----
-
 ## 📜 Sobre el proyecto
 
 Este sitio web es el **proyecto final de la Electiva *Matemáticos de la historia con IA***. El reto consistía en usar herramientas de inteligencia artificial de forma **crítica y creativa** para investigar, producir y divulgar la vida y los aportes de un matemático de la historia.
