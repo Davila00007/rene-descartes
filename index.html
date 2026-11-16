@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>René Descartes · Matemáticos de la historia con IA</title>
+  <meta name="description" content="Sitio de divulgación sobre René Descartes: vida, línea de tiempo, geometría analítica, impacto actual, podcast, quiz y fuentes.">
+
+  <!-- Tipografías: Cormorant Garamond (títulos) + Lora (texto, muy legible) -->
+  <!-- Ícono de la pestaña del navegador (favicon) -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Barra de progreso de lectura (se llena con JavaScript al hacer scroll) -->
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <!-- ===================== MENÚ DE NAVEGACIÓN ===================== -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="#inicio" class="nav__brand">R. Descartes</a>
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
+        <span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span>
+        <span class="sr-only">Abrir menú</span>
+      </button>
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#presentacion">Video</a></li>
+        <li><a href="#biografia">Biografía</a></li>
+        <li><a href="#linea-tiempo">Línea de tiempo</a></li>
+        <li><a href="#aportes">Aportes</a></li>
+        <li><a href="#impacto">Impacto hoy</a></li>
+        <li><a href="#podcast">Podcast</a></li>
+        <li><a href="#juego">Juego</a></li>
+        <li><a href="#curiosidades">Datos curiosos</a></li>
+        <li><a href="#fuentes">Fuentes</a></li>
+        <li><a href="#uso-ia">Uso de IA</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===================== 1. INICIO ===================== -->
+    <section id="inicio" class="hero">
+      <div class="hero__inner">
+        <div class="hero__text">
+          <p class="eyebrow hero-anim" style="--d:0">Matemáticos de la historia · Siglo XVII</p>
+          <h1 class="hero__title hero-anim" style="--d:1">René Descartes</h1>
+          <p class="hero__dates hero-anim" style="--d:2">31 de marzo de 1596 · La Haye, Francia &nbsp;—&nbsp; 11 de febrero de 1650 · Estocolmo, Suecia</p>
+
+          <blockquote class="hero__quote hero-anim" style="--d:3">
+            <p>«Pienso, luego existo»</p>
+            <cite>Discurso del método (1637), cuarta parte · en latín: <em>Cogito, ergo sum</em></cite>
+          </blockquote>
+
+          <p class="hero__intro hero-anim" style="--d:4">
+            Filósofo, científico y, ante todo, matemático. Descartes propuso tratar los problemas de la geometría
+            con las herramientas del álgebra: convertir figuras en ecuaciones y ecuaciones en figuras.
+            De esa idea nació la <strong>geometría analítica</strong>, la base de cada gráfica que dibujamos hoy.
+          </p>
+
+          <div class="hero__actions hero-anim" style="--d:5">
+            <a href="#presentacion" class="btn btn--primary">Comenzar a explorar</a>
+            <a href="#aportes" class="btn btn--ghost">Ir a las matemáticas</a>
+          </div>
+        </div>
+
+        <figure class="hero__portrait hero-anim" style="--d:2">
+          <div class="frame">
+
+          <img src="images/descartes.webp" alt="Retrato al óleo de René Descartes con cabello largo, bigote, cuello blanco y traje negro" width="800" height="800">
+          </div>
+          
+          <figcaption>Retrato de René Descartes, a partir de Frans Hals (siglo XVII). Museo del Louvre, París.</figcaption>
+        </figure>
+      </div>
+
+      <!-- Ejes cartesianos decorativos de fondo -->
+      <svg class="hero__axes" viewBox="0 0 400 400" aria-hidden="true">
+        <line x1="0" y1="200" x2="400" y2="200"/><line x1="200" y1="0" x2="200" y2="400"/>
+        <circle cx="200" cy="200" r="120"/><path d="M40 360 Q200 -80 360 360"/>
+      </svg>
+    </section>
+
+    <!-- ===================== VIDEO: DESCARTES SE PRESENTA ===================== -->
+    <section id="presentacion" class="section section--dark">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Una visita del siglo XVII</p>
+          <h2>Descartes se presenta</h2>
+          <p class="section__lead">
+            Antes de recorrer la página, escucha al propio Descartes, recreado con inteligencia artificial,
+            hablar en primera persona sobre su vida, su manera de pensar y sus aportes a las matemáticas.
+          </p>
+        </header>
+
+        <div class="video-card reveal">
+          <span class="ai-badge">Recreación histórica generada con IA</span>
+
+          <div class="media-frame">
+            <!--
+              ▶ AQUÍ VA TU VIDEO
+              Coloca tu archivo en:  video/descartes.mp4
+              No hay que cambiar nada más en el código.
+            -->
+            <video id="descartesVideo" controls preload="metadata" playsinline poster="images/descartesia.webp">
+              <source src="video/ReneDescartes.mp4" type="video/mp4">
+              Tu navegador no puede reproducir este video.
+            </video>
+            <!-- Este aviso solo aparece si todavía no existe video/descartes.mp4 -->
+            <div class="media-missing" id="videoMissing" hidden>
+              <p><strong>El video aún no está cargado.</strong></p>
+              <p>Coloca el archivo en <code>video/descartes.mp4</code></p>
+            </div>
+          </div>
+
+          <div class="video-card__info">
+            <div>
+              <h3>Sobre el video</h3>
+              <p>
+                René Descartes comparte una breve presentación sobre su vida, sus principales aportes a la filosofía y las matemáticas, y la importancia de sus ideas en el desarrollo del pensamiento moderno.
+              </p>
+              <p class="note">
+              La voz y la imagen de René Descartes han sido recreadas con inteligencia artificial con fines educativos, para acercarnos de forma más visual e interactiva a su historia y sus aportes.
+              </p>
+            </div>
+            <ul class="tool-chips" aria-label="Herramientas usadas para crear el video">
+              <li><strong>Microsoft Copilot</strong><span>Guion</span></li>
+              <li><strong>ElevenLabs</strong><span>Voz</span></li>
+              <li><strong>VisionStory</strong><span>Animación del personaje</span></li>
+              <li><strong>Clipchamp</strong><span>Subtítulos</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 2. BIOGRAFÍA ===================== -->
+    <section id="biografia" class="section">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Capítulo I</p>
+          <h2>Biografía</h2>
+          <p class="section__lead">De un pequeño pueblo de Turena a la corte de Suecia: la vida de un hombre que buscó la certeza en una época de guerras y de cambio intelectual.</p>
+        </header>
+
+        <div class="bio-grid">
+          <article class="card reveal">
+            <span class="card__num">I</span>
+            <h3>Nacimiento y familia</h3>
+            <p>Nació el <strong>31 de marzo de 1596</strong> en La Haye, en la región de Turena (Francia). Hoy el pueblo se llama <em>Descartes</em> en su honor.</p>
+            <p>Su padre, Joachim, era abogado y consejero del Parlamento de Bretaña. Su madre, Jeanne Brochard, murió cuando él tenía poco más de un año, y fue criado por su abuela.</p>
+          </article>
+
+          <article class="card card--image reveal">
+            <figure>
+              <img src="images/paisaje-massys.webp" alt="Pintura flamenca del siglo XVI con un paisaje de rocas, árboles y una ciudad al fondo, y varias figuras en primer plano" loading="lazy" width="850" height="560">
+              <figcaption>Pintura de Cornelis Massys, siglo XVI. Usada como ambientación del mundo europeo en que nació Descartes; no representa su vida.</figcaption>
+            </figure>
+            <div>
+              <span class="card__num">II</span>
+              <h3>Contexto histórico</h3>
+              <p>Europa vivía guerras de religión y, desde 1618, la <strong>Guerra de los Treinta Años</strong>. En las escuelas dominaba la filosofía de Aristóteles, pero Galileo y Kepler empezaban a cambiar la forma de estudiar la naturaleza: era el inicio de la <strong>Revolución Científica</strong>.</p>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <span class="card__num">III</span>
+            <h3>Formación y educación</h3>
+            <p>Hacia 1606 o 1607 entró al colegio jesuita de <strong>La Flèche</strong>, uno de los mejores de Francia, donde estudió lenguas clásicas, filosofía y matemáticas hasta 1614 o 1615.</p>
+            <p>En <strong>1616</strong> obtuvo su título en derecho en la Universidad de Poitiers. Su familia quería que fuera abogado, pero él prefirió «el gran libro del mundo».</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="card__num">IV</span>
+            <h3>Viajes y vida intelectual</h3>
+            <p>En <strong>1618</strong> se unió al ejército de Mauricio de Nassau en Breda (Países Bajos). Allí conoció a <strong>Isaac Beeckman</strong>, quien le propuso problemas de física y matemáticas.</p>
+            <p>En <strong>1619</strong>, ya en el ejército bávaro, tuvo los famosos tres sueños. Después viajó por Europa, vivió en París y en <strong>1628</strong> se instaló en los Países Bajos, donde pasó unos veinte años escribiendo.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="card__num">V</span>
+            <h3>Filosofía, ciencia y matemáticas</h3>
+            <p>Para Descartes, las matemáticas eran el modelo de conocimiento seguro. Quiso aplicar su rigor a todo: dudar de lo incierto, dividir los problemas en partes y avanzar de lo simple a lo complejo.</p>
+            <p>Así describió un mundo mecánico de materia en movimiento, publicó la ley de la refracción de la luz y explicó el arcoíris. La Enciclopedia de Filosofía de Stanford lo resume así: fue <em>primero matemático, luego científico y en tercer lugar metafísico</em>.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="card__num">VI</span>
+            <h3>Obras principales</h3>
+            <ul class="list-ornate">
+              <li><strong>1637</strong> · <em>Discurso del método</em>, con tres ensayos: <em>La Dióptrica</em>, <em>Los Meteoros</em> y <em>La Geometría</em>.</li>
+              <li><strong>1641</strong> · <em>Meditaciones metafísicas</em>.</li>
+              <li><strong>1644</strong> · <em>Principios de la filosofía</em>.</li>
+              <li><strong>1649</strong> · <em>Las pasiones del alma</em>.</li>
+            </ul>
+          </article>
+
+          <article class="card card--wide reveal">
+            <span class="card__num">VII</span>
+            <h3>Últimos años y fallecimiento</h3>
+            <p>Desde 1643 mantuvo una profunda correspondencia filosófica con la princesa <strong>Isabel de Bohemia</strong>. En 1649 aceptó la invitación de la <strong>reina Cristina de Suecia</strong> y viajó a Estocolmo para enseñarle filosofía.</p>
+            <p>El invierno sueco fue muy duro para él. Murió el <strong>11 de febrero de 1650</strong> en Estocolmo, según el diagnóstico de la época, de una neumonía. Tenía 53 años.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 3. LÍNEA DE TIEMPO ===================== -->
+    <section id="linea-tiempo" class="section section--tinted">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Capítulo II</p>
+          <h2>Línea de tiempo</h2>
+          <p class="section__lead">Haz clic sobre cada año para leer qué ocurrió. También puedes usar las flechas.</p>
+        </header>
+
+        <!-- La línea de tiempo se construye con JavaScript a partir del arreglo TIMELINE en script.js -->
+        <div class="timeline reveal">
+          <div class="timeline__track" id="timelineTrack" role="tablist" aria-label="Años importantes"></div>
+          <div class="timeline__panel" id="timelinePanel" role="tabpanel" aria-live="polite"></div>
+          <div class="timeline__controls">
+            <button class="btn btn--ghost btn--small" id="tlPrev" aria-label="Acontecimiento anterior">← Anterior</button>
+            <span id="tlCounter" class="timeline__counter"></span>
+            <button class="btn btn--ghost btn--small" id="tlNext" aria-label="Acontecimiento siguiente">Siguiente →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 4. APORTES A LAS MATEMÁTICAS ===================== -->
+    <section id="aportes" class="section">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Capítulo III · La sección central</p>
+          <h2>Aportes a las matemáticas</h2>
+          <p class="section__lead">
+            En 1637 Descartes publicó <em>La Géométrie</em>, un apéndice del <em>Discurso del método</em>.
+            Su gran idea: <strong>todo problema de geometría puede traducirse a una ecuación, y resolver la ecuación resuelve el problema.</strong>
+          </p>
+        </header>
+
+        <!-- 4.1 Tarjetas de aportes -->
+        <div class="contrib-grid">
+          <article class="contrib reveal">
+            <div class="contrib__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><line x1="6" y1="40" x2="44" y2="40"/><line x1="8" y1="44" x2="8" y2="4"/><path d="M8 38 C20 34 26 10 42 8"/></svg>
+            </div>
+            <h3>Geometría analítica</h3>
+            <p>Unió dos ramas que se estudiaban por separado. La geometría aporta las figuras; el álgebra aporta el cálculo. Una curva pasa a ser una <strong>ecuación entre dos cantidades</strong>, y estudiar la ecuación es estudiar la curva.</p>
+            <p class="note">Pierre de Fermat llegó a ideas similares, de forma independiente, en la misma época.</p>
+          </article>
+
+          <article class="contrib reveal">
+            <div class="contrib__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><line x1="4" y1="40" x2="44" y2="40"/><line x1="8" y1="44" x2="8" y2="4"/><line x1="8" y1="18" x2="30" y2="18" stroke-dasharray="3 3"/><line x1="30" y1="40" x2="30" y2="18" stroke-dasharray="3 3"/><circle cx="30" cy="18" r="3.5"/></svg>
+            </div>
+            <h3>Uso de coordenadas</h3>
+            <p>Para describir un punto de una curva, Descartes usó dos medidas: una distancia sobre una línea de referencia y otra distancia hasta el punto. Es la semilla de las <strong>coordenadas</strong>.</p>
+            <p class="note">Ojo: Descartes no dibujó el «plano cartesiano» moderno con dos ejes perpendiculares y números negativos. Ese formato se consolidó después, pero lleva su nombre (en latín, <em>Cartesius</em>).</p>
+          </article>
+
+          <article class="contrib reveal">
+            <div class="contrib__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><line x1="6" y1="40" x2="42" y2="40"/><line x1="6" y1="40" x2="30" y2="10"/><line x1="16" y1="40" x2="22" y2="20"/><line x1="34" y1="40" x2="30" y2="10"/></svg>
+            </div>
+            <h3>Álgebra de segmentos</h3>
+            <p>Antes, multiplicar dos longitudes daba un área y multiplicar tres daba un volumen. Descartes eligió un <strong>segmento unidad</strong> y mostró que el producto de dos segmentos puede ser <strong>otro segmento</strong>. Así cualquier potencia (x², x³, x⁴…) se puede dibujar como una línea.</p>
+          </article>
+
+          <article class="contrib reveal">
+            <div class="contrib__icon contrib__icon--text" aria-hidden="true">x, y</div>
+            <h3>Notación que seguimos usando</h3>
+            <p>Usó las últimas letras del alfabeto (<em>x, y, z</em>) para las incógnitas y las primeras (<em>a, b, c</em>) para las cantidades conocidas. También popularizó los exponentes como <em>x³</em>. Es casi la notación de cualquier cuaderno de hoy.</p>
+            <p class="note">Algunas cosas cambiaron: solía escribir <em>xx</em> en lugar de <em>x²</em> y no usaba el signo «=».</p>
+          </article>
+
+          <article class="contrib reveal">
+            <div class="contrib__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M4 40 Q14 4 24 24 T44 8"/></svg>
+            </div>
+            <h3>Clasificar curvas por su ecuación</h3>
+            <p>En el libro II de <em>La Géométrie</em> agrupó las curvas según el grado de su ecuación y resolvió el <strong>problema de Pappus</strong>, un reto heredado de los griegos. También dio un método para hallar la recta normal (perpendicular) a una curva.</p>
+          </article>
+
+          <article class="contrib reveal">
+            <div class="contrib__icon contrib__icon--text" aria-hidden="true">+ −</div>
+            <h3>La regla de los signos</h3>
+            <p>En el libro III enunció una regla para estimar cuántas raíces positivas puede tener un polinomio: <strong>como máximo, tantas como cambios de signo</strong> haya entre sus coeficientes. Hoy se conoce como la <em>regla de los signos de Descartes</em>.</p>
+          </article>
+        </div>
+
+        <!-- 4.2 Diagrama: multiplicar segmentos -->
+        <div class="figure-block reveal">
+          <div class="figure-block__svg">
+            <svg viewBox="0 0 420 260" role="img" aria-labelledby="segTitle segDesc">
+              <title id="segTitle">Construcción del producto de dos segmentos</title>
+              <desc id="segDesc">Sobre una recta están A, B, D y sobre otra B, C, E. AB mide 1. Se une A con C y se traza DE paralela a AC. El segmento BE es el producto BD por BC.</desc>
+              <g class="dg-line">
+                <line x1="30" y1="230" x2="400" y2="230"/>
+                <line x1="30" y1="230" x2="330" y2="20"/>
+              </g>
+              <line class="dg-accent" x1="110" y1="230" x2="130" y2="160"/>
+              <line class="dg-accent dg-dash" x1="250" y1="230" x2="305" y2="37.5"/>
+              <g class="dg-pt">
+                <circle cx="30" cy="230" r="4"/><circle cx="110" cy="230" r="4"/><circle cx="250" cy="230" r="4"/>
+                <circle cx="130" cy="160" r="4"/><circle cx="305" cy="37.5" r="4"/>
+              </g>
+              <g class="dg-label">
+                <text x="18" y="252">B</text><text x="104" y="252">A</text><text x="244" y="252">D</text>
+                <text x="112" y="150">C</text><text x="314" y="40">E</text>
+                <text x="56" y="222" class="dg-small">1</text>
+              </g>
+            </svg>
+          </div>
+          <div class="figure-block__text">
+            <h3>Así multiplicaba Descartes con regla y compás</h3>
+            <ol>
+              <li>Toma un segmento <strong>AB = 1</strong> (la unidad).</li>
+              <li>Quieres multiplicar <strong>BD</strong> por <strong>BC</strong>. Une A con C.</li>
+              <li>Desde D traza una paralela a AC; corta la otra recta en E.</li>
+              <li>Por semejanza de triángulos: BE / BD = BC / AB = BC / 1.</li>
+              <li>Entonces <strong>BE = BD · BC</strong>: el producto es un segmento.</li>
+            </ol>
+            <p class="note">Construcción descrita al comienzo del libro I de <em>La Géométrie</em> (1637).</p>
+          </div>
+        </div>
+
+        <!-- 4.3 Plano interactivo -->
+        <div class="plane reveal">
+          <div class="plane__text">
+            <h3>Prueba la idea: cada punto es un par de números</h3>
+            <p>Mueve el cursor (o el dedo) sobre el plano. Verás las coordenadas <em>(x, y)</em> del punto y si cumple la ecuación de la circunferencia <strong>x² + y² = 25</strong> o la de la recta <strong>y = x + 1</strong>.</p>
+            <p class="plane__readout" id="planeReadout" aria-live="polite">Toca el plano para leer un punto.</p>
+            <p class="note">Usamos ejes perpendiculares modernos para que el ejemplo sea claro.</p>
+          </div>
+          <canvas id="planeCanvas" width="460" height="460" aria-label="Plano de coordenadas interactivo con una circunferencia de radio 5 y la recta y igual a x más 1"></canvas>
+        </div>
+
+        <!-- 4.4 Ejemplo resuelto paso a paso -->
+        <article class="worked reveal" id="ejemplo">
+          <header class="worked__head">
+            <span class="ribbon">Ejemplo resuelto</span>
+            <h3>¿Dónde se cortan una circunferencia y una recta?</h3>
+          </header>
+
+          <div class="worked__steps">
+            <div class="step">
+              <h4><span>1</span> El problema</h4>
+              <p>Tenemos una circunferencia con centro en el origen y radio 5, y una recta que pasa por el punto (0, 1) y sube una unidad por cada unidad que avanza. ¿En qué puntos se cruzan?</p>
+              <p>Con solo regla y compás habría que dibujar con mucha precisión y adivinar. Descartes propone otro camino.</p>
+            </div>
+
+            <div class="step">
+              <h4><span>2</span> La idea matemática</h4>
+              <p>Traducimos cada figura a una ecuación:</p>
+              <div class="math">
+                <p>Circunferencia (teorema de Pitágoras): <strong>x² + y² = 25</strong></p>
+                <p>Recta: <strong>y = x + 1</strong></p>
+              </div>
+              <p>Un punto de corte está en las dos figuras, así que debe cumplir <strong>las dos ecuaciones a la vez</strong>.</p>
+            </div>
+
+            <div class="step">
+              <h4><span>3</span> El procedimiento</h4>
+              <div class="math math--steps">
+                <p>Sustituimos <em>y = x + 1</em> en la circunferencia:</p>
+                <p>x² + (x + 1)² = 25</p>
+                <p>x² + x² + 2x + 1 = 25</p>
+                <p>2x² + 2x − 24 = 0</p>
+                <p>x² + x − 12 = 0 <span class="hint">(dividimos entre 2)</span></p>
+                <p>(x + 4)(x − 3) = 0 <span class="hint">(dos números que multiplicados dan −12 y sumados dan 1: 4 y −3)</span></p>
+                <p>x = 3 &nbsp;o&nbsp; x = −4</p>
+                <p>Si x = 3 → y = 4. &nbsp;&nbsp; Si x = −4 → y = −3.</p>
+              </div>
+            </div>
+
+            <div class="step step--result">
+              <h4><span>4</span> El resultado</h4>
+              <p>La recta corta la circunferencia en dos puntos: <strong>(3, 4)</strong> y <strong>(−4, −3)</strong>.</p>
+              <p><em>Comprobación:</em> 3² + 4² = 9 + 16 = 25 ✓ &nbsp;·&nbsp; (−4)² + (−3)² = 16 + 9 = 25 ✓ &nbsp;·&nbsp; 4 = 3 + 1 ✓ &nbsp;·&nbsp; −3 = −4 + 1 ✓</p>
+              <svg class="worked__svg" viewBox="0 0 240 240" role="img" aria-label="Gráfica de la circunferencia de radio 5 cortada por la recta y igual a x más 1 en los puntos (3,4) y (−4,−3)">
+                <line class="ax" x1="10" y1="120" x2="230" y2="120"/><line class="ax" x1="120" y1="10" x2="120" y2="230"/>
+                <circle class="cv" cx="120" cy="120" r="90"/>
+                <line class="ln" x1="12" y1="210" x2="228" y2="-6"/>
+                <circle class="pt" cx="174" cy="48" r="5"/><circle class="pt" cx="48" cy="174" r="5"/>
+                <text x="184" y="68">(3, 4)</text><text x="62" y="196">(−4, −3)</text>
+              </svg>
+            </div>
+
+            <div class="step step--why">
+              <h4><span>5</span> ¿Por qué fue tan importante?</h4>
+              <p>Lo que antes era un problema de dibujo se volvió un <strong>cálculo que cualquiera puede repetir</strong> y comprobar. Este método permitió estudiar curvas mucho más complicadas que las de los griegos y preparó el camino para el <strong>cálculo diferencial e integral</strong> de Newton y Leibniz en las décadas siguientes.</p>
+              <p class="note">Escribimos el ejemplo con notación moderna para que sea fácil de seguir.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4.5 Mini ejemplo: regla de los signos -->
+        <article class="mini-example reveal">
+          <h3>Bonus: la regla de los signos en acción</h3>
+          <p>Toma el polinomio <strong>x³ − 3x² − x + 3</strong>. Sus signos son <span class="signs">+ − − +</span>: hay <strong>2 cambios</strong> de signo, así que tiene como máximo 2 raíces positivas.</p>
+          <p>Comprobación: x³ − 3x² − x + 3 = (x − 1)(x − 3)(x + 1). Sus raíces positivas son 1 y 3: <strong>exactamente 2</strong> ✓.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== 5. IMPACTO HOY ===================== -->
+    <section id="impacto" class="section section--tinted">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Capítulo IV</p>
+          <h2>Impacto en la actualidad</h2>
+          <p class="section__lead">Descartes no inventó las computadoras ni el GPS. Pero la idea de describir posiciones y formas con números, que él ayudó a fundar, está detrás de muchas tecnologías actuales. Por eso separamos lo que fue influencia directa de lo que son aplicaciones modernas derivadas.</p>
+        </header>
+
+        <div class="impact">
+          <div class="impact__col reveal">
+            <h3 class="impact__title impact__title--direct">Influencia histórica directa</h3>
+            <ul class="impact__list">
+              <li><strong>Geometría analítica.</strong> La disciplina que se enseña en colegios y universidades parte de su obra y la de Fermat.</li>
+              <li><strong>Ecuaciones de curvas.</strong> Describir rectas, circunferencias y parábolas con ecuaciones es exactamente su programa.</li>
+              <li><strong>Notación algebraica.</strong> Las letras x, y, z para incógnitas y los exponentes que escribimos hoy.</li>
+              <li><strong>Camino hacia el cálculo.</strong> Newton estudió <em>La Géométrie</em>; el cálculo diferencial se construyó sobre la idea de curva como ecuación.</li>
+            </ul>
+          </div>
+          <div class="impact__col reveal">
+            <h3 class="impact__title impact__title--modern">Aplicaciones modernas derivadas</h3>
+            <div class="impact__cards">
+              <div class="mini-card"><strong>Gráficos y datos</strong><span>Cada gráfica de barras o de líneas ubica datos en un sistema de coordenadas.</span></div>
+              <div class="mini-card"><strong>Física e ingeniería</strong><span>Posición, velocidad y trayectorias se describen con coordenadas y ecuaciones.</span></div>
+              <div class="mini-card"><strong>Arquitectura y diseño</strong><span>Los programas de diseño (CAD) guardan planos y modelos como puntos y ecuaciones.</span></div>
+              <div class="mini-card"><strong>Computación</strong><span>La pantalla es una cuadrícula de píxeles: cada uno tiene una coordenada (x, y).</span></div>
+              <div class="mini-card"><strong>Videojuegos y 3D</strong><span>Personajes y escenarios se mueven en coordenadas (x, y, z).</span></div>
+              <div class="mini-card"><strong>Mapas y GPS</strong><span>Latitud y longitud son también un sistema de coordenadas sobre la Tierra.</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="caution reveal">Estas tecnologías se desarrollaron siglos después con el aporte de muchos matemáticos e ingenieros. Lo que les debemos a Descartes es la idea de fondo: <strong>representar el espacio con números</strong>.</p>
+      </div>
+    </section>
+
+    <!-- ===================== 6. PODCAST ===================== -->
+    <section id="podcast" class="section section--dark">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Capítulo V · Para escuchar</p>
+          <h2>Podcast</h2>
+          <p class="section__lead">Un episodio para conocer a Descartes mientras caminas o descansas: quién fue, qué significa «pienso, luego existo» y cómo convirtió la geometría en álgebra.</p>
+        </header>
+
+        <div class="podcast reveal">
+          <div class="podcast__cover" aria-hidden="true">
+            <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="56"/><circle cx="60" cy="60" r="36"/><circle cx="60" cy="60" r="8"/><line x1="4" y1="60" x2="116" y2="60"/><line x1="60" y1="4" x2="60" y2="116"/></svg>
+          </div>
+          <div class="podcast__body">
+            <p class="podcast__kicker">Episodio 1</p>
+            <h3>Descartes: dudar para encontrar la verdad</h3>
+            <p>Audio creado con apoyo de NotebookLM a partir de las fuentes del proyecto.</p>
+            
+            <audio id="podcastAudio" controls preload="metadata">
+              <source src="audio/La_duda_de_Descartes.m4a" type="audio/mp4">
+              Tu navegador no puede reproducir este audio.
+            </audio>
+            <p class="media-missing media-missing--inline" id="audioMissing" hidden>El podcast aún no está cargado. Coloca el archivo en <code>audio/podcast.mp3</code>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 7. JUEGO INTERACTIVO (QUIZ) ===================== -->
+    <section id="juego" class="section">
+      <div class="container container--narrow">
+        <header class="section__head reveal">
+          <p class="eyebrow">Capítulo VI · Ponte a prueba</p>
+          <h2>El desafío de Descartes</h2>
+          <p class="section__lead">10 preguntas sobre su vida, su época y sus matemáticas. Responde y descubre si mereces un lugar en su círculo de sabios.</p>
+        </header>
+
+        <!-- Las preguntas están en el arreglo QUIZ de script.js -->
+        <div class="quiz reveal" id="quiz">
+          <div class="quiz__start" id="quizStart">
+            <p class="quiz__big">?</p>
+            <p>Cada respuesta correcta suma un punto. Verás al instante si acertaste y por qué.</p>
+            <button class="btn btn--primary" id="quizStartBtn">Comenzar el desafío</button>
+          </div>
+
+          <div class="quiz__game" id="quizGame" hidden>
+            <div class="quiz__meta">
+              <span id="quizCounter">Pregunta 1 de 10</span>
+              <span id="quizScore">Puntos: 0</span>
+            </div>
+            <div class="quiz__bar"><span id="quizBar"></span></div>
+            <h3 class="quiz__question" id="quizQuestion"></h3>
+            <div class="quiz__options" id="quizOptions"></div>
+            <p class="quiz__feedback" id="quizFeedback" aria-live="polite"></p>
+            <button class="btn btn--primary" id="quizNext" hidden>Siguiente pregunta →</button>
+          </div>
+
+          <div class="quiz__end" id="quizEnd" hidden>
+            <p class="quiz__big" id="quizFinalScore"></p>
+            <h3 id="quizFinalTitle"></h3>
+            <p id="quizFinalText"></p>
+            <button class="btn btn--primary" id="quizRestart">Volver a jugar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 8. DATOS CURIOSOS ===================== -->
+    <section id="curiosidades" class="section section--tinted">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Capítulo VII</p>
+          <h2>Datos curiosos</h2>
+          <p class="section__lead">La noche del 10 al 11 de noviembre de 1619 cambió la vida de Descartes. Elige un sueño para leerlo.</p>
+        </header>
+
+        <div class="dreams reveal">
+          <div class="dreams__tabs" role="tablist" aria-label="Los tres sueños">
+            <button class="dreams__tab is-active" role="tab" aria-selected="true" aria-controls="dream1" id="tab-dream1" data-dream="dream1"><span>I</span>Primer sueño</button>
+            <button class="dreams__tab" role="tab" aria-selected="false" aria-controls="dream2" id="tab-dream2" data-dream="dream2" tabindex="-1"><span>II</span>Segundo sueño</button>
+            <button class="dreams__tab" role="tab" aria-selected="false" aria-controls="dream3" id="tab-dream3" data-dream="dream3" tabindex="-1"><span>III</span>Tercer sueño</button>
+          </div>
+
+          <div class="dreams__intro">
+            <h3>Los tres sueños de Descartes</h3>
+            <p>En la noche del 10 al 11 de noviembre de 1619, mientras se encontraba en una habitación calentada por una estufa durante su servicio en el ejército, René Descartes tuvo tres sueños que él consideró muy importantes.</p>
+          </div>
+
+          <article class="dreams__panel is-active" id="dream1" role="tabpanel" aria-labelledby="tab-dream1">
+            <p class="dreams__mood">Fantasmas y viento</p>
+            <p>En el primer sueño, caminaba por una calle mientras sentía una gran debilidad en el lado derecho de su cuerpo y era perseguido por fantasmas aterradores. Un viento fuerte lo hizo girar varias veces y le dio la sensación de que iba a caer; luego llegó a un colegio y quiso entrar a una capilla para rezar, pero el viento lo empujó contra ella. En ese sueño, una persona le dijo que un tal «Monsieur N.» tenía algo para entregarle, y Descartes imaginó que se trataba de un melón traído de un país lejano.</p>
+          </article>
+
+          <article class="dreams__panel" id="dream2" role="tabpanel" aria-labelledby="tab-dream2" hidden>
+            <p class="dreams__mood">Un trueno y chispas</p>
+            <p>Después de despertar asustado y rezar, volvió a dormirse y tuvo un segundo sueño. En él escuchó un ruido fuerte y estridente que creyó que era un trueno; el susto lo despertó y, al abrir los ojos, vio muchas chispas o luces brillantes alrededor de la habitación. Descartes intentó explicarse el fenómeno de manera racional y, al calmarse, volvió a dormir.</p>
+            <aside class="dreams__aside">
+              <strong>¿Una explicación médica?</strong> En 2018, un artículo del <em>Journal of Clinical Sleep Medicine</em> planteó la hipótesis de que este segundo «sueño» pudo ser un episodio del <em>síndrome de la cabeza explosiva</em>, un trastorno benigno del sueño en el que se oye un ruido fuerte al dormirse o despertar (Otaiku, 2018).
+            </aside>
+          </article>
+
+          <article class="dreams__panel" id="dream3" role="tabpanel" aria-labelledby="tab-dream3" hidden>
+            <p class="dreams__mood">Dos libros sobre la mesa</p>
+            <p>El tercer sueño fue tranquilo y, según él, el más importante. Encontró sobre una mesa dos libros: un diccionario y una colección de poemas llamada <em>Corpus poetarum</em>. Al abrir el libro de poemas, leyó una frase que preguntaba: «¿Qué camino debo seguir en la vida?». Luego apareció un desconocido que le mostró una frase que decía «Sí y no».</p>
+            <p>Descartes interpretó que el diccionario representaba todas las ciencias reunidas y que el libro de poemas simbolizaba la unión entre la filosofía y la sabiduría. Por eso, entendió que los tres sueños eran una señal para dedicarse a buscar un nuevo método de conocimiento, basado en la razón, la duda y la búsqueda de la verdad.</p>
+            <aside class="dreams__aside">
+              <strong>En latín:</strong> las frases de los poemas eran <em>«Quod vitae sectabor iter?»</em> («¿Qué camino de la vida seguiré?») y <em>«Est et non»</em> («Es y no es»), versos del poeta romano Ausonio.
+            </aside>
+          </article>
+
+          <p class="source-line">Fuente: American Mathematical Society. (2008). <em>Descartes’ dreams</em>. <em>Notices of the American Mathematical Society, 55</em>(1).</p>
+        </div>
+
+        <h3 class="subhead reveal">Otros datos poco conocidos</h3>
+        <div class="facts">
+          <div class="fact reveal">
+            <span class="fact__mark" aria-hidden="true">✦</span>
+            <h4>¿Por qué «cartesiano»?</h4>
+            <p>En latín, el idioma de los sabios de su época, Descartes firmaba como <em>Renatus Cartesius</em>. De ahí vienen «plano cartesiano» y «filosofía cartesiana».</p>
+          </div>
+          <div class="fact reveal">
+            <span class="fact__mark" aria-hidden="true">✦</span>
+            <h4>Un libro sin nombre de autor</h4>
+            <p>El <em>Discurso del método</em> se publicó en 1637 sin el nombre del autor y en francés, no en latín, para que más personas pudieran leerlo.</p>
+          </div>
+          <div class="fact reveal">
+            <span class="fact__mark" aria-hidden="true">✦</span>
+            <h4>El libro que no se atrevió a publicar</h4>
+            <p>En 1633 tenía listo su tratado <em>El mundo</em>. Al saber que la Iglesia había condenado a Galileo, decidió no publicarlo. Apareció recién en 1664, después de su muerte.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 9. FUENTES ===================== -->
+    <section id="fuentes" class="section">
+      <div class="container container--narrow">
+        <header class="section__head reveal">
+          <p class="eyebrow">Capítulo VIII</p>
+          <h2>Fuentes</h2>
+          <p class="section__lead">Referencias consultadas en la investigación, en formato APA (7.ª edición).</p>
+        </header>
+
+        <h3 class="ref-group reveal">Artículos y enciclopedias académicas</h3>
+        <ol class="refs reveal">
+          <li>American Mathematical Society. (2008). <em>Descartes’ dreams</em>. <em>Notices of the American Mathematical Society, 55</em>(1).</li>
+          <li>Ayerbe Toledano, J. M. (2017). El nacimiento de la geometría analítica. <em>Lecturas Matemáticas, 38</em>(2), 93–124.</li>
+          <li>Domski, M. (2025). Descartes’ mathematics. En E. N. Zalta y U. Nodelman (Eds.), <em>The Stanford Encyclopedia of Philosophy</em>. Stanford University. <a href="https://plato.stanford.edu/entries/descartes-mathematics/" target="_blank" rel="noopener">https://plato.stanford.edu/entries/descartes-mathematics/</a></li>
+          <li>Hatfield, G. (2021). René Descartes. En E. N. Zalta (Ed.), <em>The Stanford Encyclopedia of Philosophy</em> (Winter 2021 Edition). Stanford University. <a href="https://plato.stanford.edu/archives/win2021/entries/descartes/" target="_blank" rel="noopener">https://plato.stanford.edu/archives/win2021/entries/descartes/</a></li>
+          <li>Otaiku, A. I. (2018). Did René Descartes have exploding head syndrome? <em>Journal of Clinical Sleep Medicine, 14</em>(4), 675–678. <a href="https://doi.org/10.5664/jcsm.7068" target="_blank" rel="noopener">https://doi.org/10.5664/jcsm.7068</a></li>
+          <li>Rocha Herrera, L. (2004). Descartes y el significado de la filosofía mecanicista. <em>Revista Digital Universitaria, 5</em>(3). <a href="http://www.revista.unam.mx/vol.5/num3/art19/art19.htm" target="_blank" rel="noopener">http://www.revista.unam.mx/vol.5/num3/art19/art19.htm</a></li>
+      </div>
+    </section>
+
+    <!-- ===================== 10. USO DE IA ===================== -->
+    <section id="uso-ia" class="section section--dark">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Capítulo IX · Transparencia</p>
+          <h2>Uso de inteligencia artificial</h2>
+          <p class="section__lead">La IA fue una herramienta de apoyo, no un reemplazo del trabajo. Toda la información se contrastó con las fuentes citadas antes de publicarla.</p>
+        </header>
+
+        <div class="tools">
+          <div class="tools__block reveal">
+            <h3 class="tools__title"><span class="pill pill--ai">IA</span> Herramientas de inteligencia artificial</h3>
+            <div class="table-wrap">
+              <table class="tools__table">
+                <thead><tr><th scope="col">Herramienta</th><th scope="col">Uso en el proyecto</th></tr></thead>
+                <tbody>
+                  <tr><td>Claude</td><td>Desarrollo de la página web y generación del código HTML, CSS y JavaScript</td></tr>
+                  <tr><td>ChatGPT</td><td>Ingeniería y optimización de prompts, organización de ideas y planificación del proyecto</td></tr>
+                  <tr><td>Perplexity</td><td>Investigación, búsqueda y localización de fuentes</td></tr>
+                  <tr><td>NotebookLM</td><td>Organización y síntesis de fuentes, y creación del podcast</td></tr>
+                  <tr><td>Microsoft Copilot</td><td>Elaboración del guion del video</td></tr>
+                  <tr><td>ElevenLabs</td><td>Generación de la voz del personaje en el video</td></tr>
+                  <tr><td>VisionStory</td><td>Animación y creación del video del personaje</td></tr>
+                  <tr><td>Clipchamp</td><td>Subtítulos para el video</td></tr>
+                  <tr><td>Gemini</td><td>Creación del logo de la página (ícono de la pestaña)</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="tools__block reveal">
+            <h3 class="tools__title"><span class="pill pill--dev">DEV</span> Herramientas de desarrollo y publicación <small>(no son IA)</small></h3>
+            <div class="table-wrap">
+              <table class="tools__table">
+                <thead><tr><th scope="col">Herramienta</th><th scope="col">Uso en el proyecto</th></tr></thead>
+                <tbody>
+                  <tr><td>Visual Studio Code</td><td>Edición y organización del código</td></tr>
+                  <tr><td>Git</td><td>Control de versiones y gestión del código</td></tr>
+                  <tr><td>GitHub Pages</td><td>Publicación de la página web</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="principles reveal">
+          <h3>Cómo usamos la IA de forma responsable</h3>
+          <ul>
+            <li><strong>Verificamos los datos.</strong> Fechas, nombres y obras se revisaron en las fuentes académicas. La IA puede inventar información.</li>
+            <li><strong>Etiquetamos lo generado.</strong> El video de Descartes está marcado como una recreación hecha con inteligencia artificial y no como una grabación histórica. La imagen del inicio no fue creada con IA: es una pintura histórica del personaje.</li>
+            <li><strong>Citamos fuentes reales.</strong> La sección de fuentes lista los textos consultados, no solo las herramientas.</li>
+            <li><strong>Corregimos con criterio.</strong> Por ejemplo, aclaramos que Descartes no dibujó el plano cartesiano moderno con ejes perpendiculares, aunque lleva su nombre.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== PIE DE PÁGINA ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__title">René Descartes · Matemáticos de la historia con IA</p>
+
+      <p>Proyecto final · Electiva · Integrante: Michael Davila O.</p>
+      <p class="footer__small">Sitio educativo sin fines comerciales. 2026.</p>
+    </div>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Volver arriba" hidden>↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
