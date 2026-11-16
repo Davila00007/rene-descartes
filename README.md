@@ -19,12 +19,6 @@
 
 ---
 
-## 🔗 Enlace de la página
-
-<!-- ✏️ Pega aquí el enlace definitivo que te da GitHub Pages (Settings → Pages) -->
-**👉 https://davila00007.github.io/rene-descartes/**
-
-> Si el enlace aún no abre, espera unos minutos después de publicar en GitHub Pages.
 
 ---
 
@@ -144,42 +138,6 @@ rene-descartes/
 └── video/
     └── ReneDescartes.mp4          → Video de Descartes recreado con IA
 ```
-
-> 💡 **¿Quieres cambiar algo?** Las preguntas del quiz están en el arreglo `QUIZ` y los acontecimientos de la línea de tiempo en el arreglo `TIMELINE`, ambos en `script.js`. Los colores se cambian en las variables al inicio de `style.css`.
-
----
-
-## 🚀 Cómo ejecutarlo en tu computador
-
-1. **Descarga o clona** este repositorio:
-   ```bash
-   git clone https://github.com/Davila00007/rene-descartes.git
-   ```
-2. **Abre la carpeta** en Visual Studio Code: *Archivo → Abrir carpeta*.
-3. **Inicia la página** con la extensión **Live Server**: clic derecho sobre `index.html` → *Open with Live Server*.
-   También puedes hacer doble clic en `index.html` para abrirlo en el navegador.
-
-No necesita instalaciones, frameworks ni servidor: es HTML, CSS y JavaScript puro.
-
----
-
-## 🌐 Cómo publicarlo en GitHub Pages
-
-1. Crea un repositorio **público** en GitHub llamado `rene-descartes`.
-2. Desde la carpeta del proyecto, en la terminal:
-   ```bash
-   git init
-   git add .
-   git commit -m "Página de René Descartes"
-   git branch -M main
-   git remote add origin https://github.com/Davila00007/rene-descartes.git
-   git push -u origin main
-   ```
-3. En GitHub, ve a **Settings → Pages**. En **Branch** elige `main` y la carpeta `/ (root)`, y guarda.
-4. En uno o dos minutos la página estará en `https://davila00007.github.io/rene-descartes/` 🎉
-
-> ⚠️ GitHub no acepta archivos de más de **100 MB**. El video pesa unos 55 MB, así que se sube sin problema, aunque Git mostrará una advertencia.
-
 ---
 
 ## 📚 Fuentes principales
