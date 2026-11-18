@@ -476,9 +476,33 @@ body.intro-active .hero-anim { animation-play-state: paused; }
   display: grid; place-items: center;
   background: radial-gradient(ellipse at center, #2a241f 0%, var(--night) 70%);
   color: #f5ecd8;
-  transition: opacity .8s ease, visibility .8s ease;
+  /* Salida: primero se desvanece el video, luego el telón oscuro */
+  transition: opacity 1s ease .7s, visibility 0s linear 1.7s, transform 1.6s cubic-bezier(.2, .7, .2, 1) .7s;
 }
-.intro.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.intro.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; transform: scale(1.04); }
+.intro__video { transition: opacity .9s ease, filter .9s ease, transform 1.2s ease; }
+.intro.is-hidden .intro__video { opacity: 0; filter: blur(10px) brightness(.6); transform: scale(1.08); }
+
+/* Una línea dorada cruza la pantalla en la transición */
+.intro::after {
+  content: ""; position: absolute; left: 50%; top: 50%; width: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
+  transform: translate(-50%, -50%); opacity: 0; pointer-events: none;
+}
+.intro.is-hidden::after { animation: goldLine 1.4s ease .3s; }
+@keyframes goldLine {
+  0% { width: 0; opacity: 0; }
+  40% { width: 70vw; opacity: 1; }
+  100% { width: 100vw; opacity: 0; }
+}
+
+/* La página aparece suavemente detrás de la intro */
+body.intro-reveal .site-header,
+body.intro-reveal main { animation: pageIn 1.5s cubic-bezier(.2, .7, .2, 1) .8s both; }
+@keyframes pageIn {
+  from { opacity: 0; filter: blur(8px); transform: scale(.985); }
+  to { opacity: 1; filter: none; transform: none; }
+}
 
 .intro__start { text-align: center; padding: 2rem; display: flex; flex-direction: column; align-items: center; gap: 1.4rem; animation: introIn 1.2s ease both; }
 @keyframes introIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }

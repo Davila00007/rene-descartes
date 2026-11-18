@@ -414,19 +414,32 @@ document.addEventListener("DOMContentLoaded", () => {
     video.play().catch(closeIntro); // si el video no carga, entra a la página
   }
 
+  let closing = false;
   function closeIntro() {
-    video.pause();
-    intro.classList.add("is-hidden");
-    document.body.classList.remove("intro-active");
-    // Después del fundido, deja la intro lista para "Repetir video"
+    if (closing || intro.classList.contains("is-hidden")) return;
+    closing = true;
+    skip.hidden = true;
+    intro.classList.add("is-hidden");          // inicia la animación de salida
+    document.body.classList.add("intro-reveal"); // la página aparece con fundido
+    // Las animaciones del inicio arrancan cuando la página ya se ve
+    setTimeout(() => document.body.classList.remove("intro-active"), 900);
+    // Al terminar la transición, deja la intro lista para "Repetir video"
     setTimeout(() => {
+      video.pause();
       video.hidden = true;
-      skip.hidden = true;
       start.hidden = false;
-    }, 800);
+      document.body.classList.remove("intro-reveal");
+      closing = false;
+    }, 2400);
   }
 
+  // Empieza la transición un poco antes del final, para que no sea brusca
+  video.addEventListener("timeupdate", () => {
+    if (video.duration && video.duration - video.currentTime < 0.8) closeIntro();
+  });
+
   function openIntro() {
+    if (closing) return;
     window.scrollTo({ top: 0 });
     document.body.classList.add("intro-active");
     intro.classList.remove("is-hidden");
