@@ -388,3 +388,62 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+
+/* =========================================================
+   INTRO · Video de bienvenida (video/descartes-promo.mp4)
+   - Botón "¿Y si nada fuera como parece?" → reproduce el video
+   - Al terminar o al omitir → se muestra la página
+   - Botón "Repetir video" en el inicio → vuelve a mostrarlo
+   ========================================================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const intro = document.getElementById("intro");
+  const start = document.getElementById("introStart");
+  const play = document.getElementById("introPlay");
+  const video = document.getElementById("introVideo");
+  const skip = document.getElementById("introSkip");
+  const skipStart = document.getElementById("introSkipStart");
+  const replay = document.getElementById("replayIntro");
+  if (!intro || !video) return;
+
+  function playVideo() {
+    start.hidden = true;
+    video.hidden = false;
+    skip.hidden = false;
+    video.currentTime = 0;
+    video.play().catch(closeIntro); // si el video no carga, entra a la página
+  }
+
+  function closeIntro() {
+    video.pause();
+    intro.classList.add("is-hidden");
+    document.body.classList.remove("intro-active");
+    // Después del fundido, deja la intro lista para "Repetir video"
+    setTimeout(() => {
+      video.hidden = true;
+      skip.hidden = true;
+      start.hidden = false;
+    }, 800);
+  }
+
+  function openIntro() {
+    window.scrollTo({ top: 0 });
+    document.body.classList.add("intro-active");
+    intro.classList.remove("is-hidden");
+    playVideo();
+  }
+
+  play.addEventListener("click", playVideo);
+  skip.addEventListener("click", closeIntro);
+  skipStart.addEventListener("click", closeIntro);
+  video.addEventListener("ended", closeIntro);
+  video.addEventListener("error", closeIntro, true);
+  if (replay) replay.addEventListener("click", openIntro);
+
+  // La tecla Esc también omite la intro
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape" && !intro.classList.contains("is-hidden")) closeIntro();
+  });
+
+  play.focus({ preventScroll: true });
+});
