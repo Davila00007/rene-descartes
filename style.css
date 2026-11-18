@@ -95,9 +95,9 @@ strong { font-weight: 600; }
 .nav__menu a.is-active { color: var(--crimson); box-shadow: inset 0 -2px 0 var(--gold); }
 .nav__toggle { display: none; background: none; border: 1px solid var(--gold); border-radius: 4px; padding: .5rem .45rem; cursor: pointer; }
 .nav__toggle-bar { display: block; width: 22px; height: 2px; background: var(--ink); margin: 4px 0; transition: transform .3s, opacity .3s; }
-.nav__toggle[aria-expanded="true"] .nav__toggle-bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-.nav__toggle[aria-expanded="true"] .nav__toggle-bar:nth-child(2) { opacity: 0; }
-.nav__toggle[aria-expanded="true"] .nav__toggle-bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.nav__toggle[aria-expanded="true"] .nav__toggle-icon .nav__toggle-bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav__toggle[aria-expanded="true"] .nav__toggle-icon .nav__toggle-bar:nth-child(2) { opacity: 0; }
+.nav__toggle[aria-expanded="true"] .nav__toggle-icon .nav__toggle-bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
 /* ---------- 5. Botones ---------- */
 .btn {
@@ -511,4 +511,38 @@ body.intro-active .hero-anim { animation-play-state: paused; }
 @media (max-width: 680px) {
   .intro__question { font-size: 1.9rem; }
   .intro__skip { right: 1rem; bottom: 1rem; }
+}
+
+
+/* =========================================================
+   MENÚ EN COMPUTADOR: accesos rápidos + menú hamburguesa
+   (en celular y tablet se mantiene el menú de siempre)
+   ========================================================= */
+.nav__quick { display: none; }
+.nav__toggle-label { display: none; }
+.nav__toggle-icon { display: block; }
+
+@media (min-width: 1181px) {
+  .nav { position: relative; }
+  .nav__quick { display: flex; gap: .3rem; list-style: none; margin: 0 0 0 auto; padding: 0; }
+  .nav__quick a { display: block; padding: .4rem .8rem; border-radius: 4px; font-size: .95rem; color: var(--ink-soft); text-decoration: none; transition: color .2s, background .2s; }
+  .nav__quick a:hover { color: var(--crimson); background: rgba(168, 134, 58, .14); }
+  .nav__quick a.is-active { color: var(--crimson); box-shadow: inset 0 -2px 0 var(--gold); }
+
+  .nav__toggle { display: flex; align-items: center; gap: .6rem; padding: .45rem .9rem; margin-left: .6rem; background: transparent; font: inherit; color: var(--ink); transition: background .2s; }
+  .nav__toggle:hover, .nav__toggle[aria-expanded="true"] { background: rgba(168, 134, 58, .15); }
+  .nav__toggle-label { display: inline; font-size: .95rem; }
+
+  /* El menú completo pasa a ser un panel desplegable */
+  .nav__menu {
+    position: absolute; top: calc(100% + 8px); right: 0; width: 460px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: .2rem .6rem;
+    background: var(--ivory); background-image: var(--paper);
+    border: 1px solid var(--gold); border-radius: 8px; padding: 1rem;
+    box-shadow: 0 18px 40px rgba(43, 33, 24, .22);
+    opacity: 0; visibility: hidden; transform: translateY(-8px);
+    transition: opacity .25s, transform .25s, visibility .25s;
+  }
+  .nav__menu.is-open { opacity: 1; visibility: visible; transform: none; }
+  .nav__menu a { font-size: 1rem; padding: .55rem .8rem; }
 }

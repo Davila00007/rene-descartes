@@ -447,3 +447,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
   play.focus({ preventScroll: true });
 });
+
+
+/* =========================================================
+   MENÚ EN COMPUTADOR: resaltar accesos rápidos y cerrar el panel
+   ========================================================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const quickLinks = document.querySelectorAll(".nav__quick a");
+  const menu = document.getElementById("navMenu");
+  const toggle = document.getElementById("navToggle");
+
+  // Resalta el acceso rápido de la sección visible
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        quickLinks.forEach(a => a.classList.toggle("is-active", a.getAttribute("href") === "#" + entry.target.id));
+      }
+    });
+  }, { rootMargin: "-45% 0px -50% 0px" });
+  document.querySelectorAll("main section[id]").forEach(s => obs.observe(s));
+
+  function closeMenu() {
+    menu.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
+  }
+  // Cierra el panel al hacer clic fuera o al presionar Esc
+  document.addEventListener("click", e => {
+    if (menu.classList.contains("is-open") && !menu.contains(e.target) && !toggle.contains(e.target)) closeMenu();
+  });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") closeMenu(); });
+});

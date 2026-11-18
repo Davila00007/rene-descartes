@@ -62,9 +62,18 @@
   <header class="site-header" id="siteHeader">
     <nav class="nav" aria-label="Navegación principal">
       <a href="#inicio" class="nav__brand">R. Descartes</a>
+      <!-- Accesos rápidos: solo se ven en computador. El resto está en el menú hamburguesa -->
+      <ul class="nav__quick" aria-label="Accesos rápidos">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#biografia">Biografía</a></li>
+        <li><a href="#aportes">Aportes</a></li>
+        <li><a href="#podcast">Podcast</a></li>
+        <li><a href="#juego">Juego</a></li>
+      </ul>
       <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
-        <span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span>
-        <span class="sr-only">Abrir menú</span>
+        <span class="nav__toggle-icon" aria-hidden="true"><span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span><span class="nav__toggle-bar"></span></span>
+        <span class="nav__toggle-label">Secciones</span>
+        <span class="sr-only">Abrir menú de secciones</span>
       </button>
       <ul class="nav__menu" id="navMenu">
         <li><a href="#inicio">Inicio</a></li>
